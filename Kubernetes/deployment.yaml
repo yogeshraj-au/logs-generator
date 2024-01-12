@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: logs-generator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: logs-generator
+  template:
+    metadata:
+      labels:
+        app: logs-generator
+    spec:
+      containers:
+      - name: logs-generator
+        image: docker.io/imageimpressario/logs-generator
